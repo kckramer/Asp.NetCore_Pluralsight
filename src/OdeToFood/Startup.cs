@@ -26,20 +26,28 @@ namespace OdeToFood
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvcCore();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IGreeter, Greeter>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
+        // This method gets called by the runtime.
+        // Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment environment, 
                             ILoggerFactory loggerFactory, IGreeter greeter)
         {
             loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
+            if (environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseWelcomePage("/welcome");
+
+            app.UseFileServer();
+
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {
