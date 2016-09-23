@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E126D1C6-693A-45F5-A02D-BD590F4A2065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BEC32E8-73E7-46B4-A7AB-D3DA4E435D8C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OdeToFood", "src\OdeToFood\OdeToFood.xproj", "{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73A4BEA8-66C6-4A1D-B703-C2D1D1F6AD93} = {E126D1C6-693A-45F5-A02D-BD590F4A2065}
+	EndGlobalSection
+EndGlobal
