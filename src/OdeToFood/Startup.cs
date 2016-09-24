@@ -31,13 +31,12 @@ namespace OdeToFood
         {
             services.AddMvc();
 
-            services.AddEntityFrameworkSqlServer()
-                .AddDbContext<OdeToFoodDbContext>
+            services.AddDbContext<OdeToFoodDbContext>
                     (options => options.UseSqlServer(Configuration["database:connection"]));
 
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
         }
 
         // This method gets called by the runtime.

@@ -15,7 +15,6 @@ namespace OdeToFood.Entities
         public int Id { get; set; }
 
         [Required, MaxLength(80)]
-        [DataType(DataType.Password)]
         [Display(Name="Restaurant Name")]
         public string Name { get; set; }
         public CuisineType Cuisine { get; set; }
