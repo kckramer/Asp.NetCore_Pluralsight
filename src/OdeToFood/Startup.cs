@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Routing;
 using OdeToFood.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace OdeToFood
 {
@@ -46,7 +47,8 @@ namespace OdeToFood
         // This method gets called by the runtime.
         // Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment environment, 
-                            ILoggerFactory loggerFactory, IGreeter greeter)
+                            IHostingEnvironment appEnvironment, ILoggerFactory loggerFactory,
+                            IGreeter greeter)
         {
             loggerFactory.AddConsole();
 
@@ -58,6 +60,8 @@ namespace OdeToFood
             app.UseWelcomePage("/welcome");
 
             app.UseFileServer();
+
+            app.UseNodeModules(appEnvironment);
 
             app.UseIdentity();
 
