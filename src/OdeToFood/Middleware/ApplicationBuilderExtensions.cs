@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.DotNet.InternalAbstractions;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
 
 namespace Microsoft.AspNetCore.Builder
