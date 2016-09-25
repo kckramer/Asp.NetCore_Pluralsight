@@ -10,6 +10,7 @@ namespace OdeToFood.Services
         IEnumerable<Restaurant> GetAll();
         Restaurant Get(int id);
         void Add(Restaurant newRestaurant);
+        int Commit();
     }
 
     public class SqlRestaurantData : IRestaurantData
@@ -24,7 +25,11 @@ namespace OdeToFood.Services
         public void Add(Restaurant newRestaurant)
         {
             _context.Add(newRestaurant);
-            _context.SaveChanges();
+        }
+
+        public int Commit()
+        {
+            return _context.SaveChanges();
         }
 
         public Restaurant Get(int id)
@@ -64,6 +69,11 @@ namespace OdeToFood.Services
         public IEnumerable<Restaurant> GetAll()
         {
             return _restaurants;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
 
         static List<Restaurant> _restaurants;

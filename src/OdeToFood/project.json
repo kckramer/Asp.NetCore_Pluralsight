@@ -16,7 +16,8 @@
     "Microsoft.EntityFrameworkCore.Design": {
       "type": "build",
       "version": "1.0.0-preview2-final"
-    }
+    },
+    "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1"
   },
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"
