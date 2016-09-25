@@ -17,7 +17,8 @@
       "type": "build",
       "version": "1.0.0-preview2-final"
     },
-    "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1"
+    "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1",
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
   },
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"

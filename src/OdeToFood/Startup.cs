@@ -9,6 +9,7 @@ using OdeToFood.Services;
 using Microsoft.AspNetCore.Routing;
 using OdeToFood.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood
 {
@@ -34,6 +35,9 @@ namespace OdeToFood
             services.AddDbContext<OdeToFoodDbContext>
                     (options => options.UseSqlServer(Configuration["database:connection"]));
 
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<OdeToFoodDbContext>();
+
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IGreeter, Greeter>();
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
@@ -54,6 +58,8 @@ namespace OdeToFood
             app.UseWelcomePage("/welcome");
 
             app.UseFileServer();
+
+            app.UseIdentity();
 
             app.UseMvc(ConfigureRoutes);
 
